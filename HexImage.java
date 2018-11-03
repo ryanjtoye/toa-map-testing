@@ -12,7 +12,7 @@ public class HexImage {
     public static final String hexFile = "hex.png";
     public static final String outputFile = "hexMap.png";
     public static final Color borderColor = new Color(0,0,0);
-    public static final int xOffset = 62;
+    public static final int xOffset = 62; //miniHex offset is 8, hex offset is 62
 
     public static void main(String[] args) {
         try{
