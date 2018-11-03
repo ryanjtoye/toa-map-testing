@@ -81,7 +81,7 @@ public class GenerateMap
         for(int x = 0; x < mapSize; x++) {
             for(int y = 0; y < mapSize; y++) {
                 double val = noise.eval(x / 60.0,y / 60.0);
-                if(map[x][y] == null && (val > -0.03f && val < 0.03f)) {
+                if(map[x][y] == null && (val > -0.06f && val < 0.06f)) {
                     map[x][y] = "water";
                 }
             }
