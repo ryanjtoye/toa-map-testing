@@ -12,6 +12,7 @@ public class HexImage {
     public static final String hexFile = "hex.png";
     public static final String outputFile = "hexMap.png";
     public static final Color borderColor = new Color(0,0,0);
+    public static final int xOffset = 62;
 
     public static void main(String[] args) {
         try{
@@ -22,7 +23,7 @@ public class HexImage {
             BufferedImage hexBase = ImageIO.read(new File(hexFile));
 
             //Create output image
-            int width = input.getWidth() * 49 + 13;
+            int width = input.getWidth() * xOffset + hexBase.getWidth() - xOffset;
             int height = (int)(input.getHeight() * hexBase.getHeight() + hexBase.getHeight() * .5);
             
             BufferedImage out = new BufferedImage(width, height, BufferedImage.TYPE_INT_RGB);
@@ -36,7 +37,7 @@ public class HexImage {
                     int rgb = input.getRGB(x,y);
 
                     int hexTopLeftY = y * hexBase.getHeight() + (x % 2 == 0 ? 0 : hexBase.getHeight() / 2);
-                    int hexTopLeftX = x * 49;
+                    int hexTopLeftX = x * xOffset;
 
                     for(int subY = 0; subY < hexBase.getHeight(); subY++) {
                         for(int subX = 0; subX < hexBase.getWidth(); subX++) {
